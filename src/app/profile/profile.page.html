@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="background-color:lightgreen; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+      Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding" color="dark">
+  <div color="dark" class="ion-text-center img-thumbnail">
+    <ion-img [src]="" [alt]="defaultPic">
+
+    </ion-img>
+    <ion-label slot="start" style="font-size: smaller;" class="border rounded mx-1" (click)="edit('address')">Edit
+      <ion-icon name="create-outline" style="font-size: medium;"></ion-icon>
+    </ion-label>
+  </div><br>
+  <div class="{{alert}} mx-auto rounded-3">
+    {{alerttxt}}
+  </div>
+  <div class="">
+    <!--name-->
+    <div>
+      <ion-label class="">
+        Name
+      </ion-label>
+      <div class="d-flex justify-content-center align-items-center gx-1 text-center">
+        <ion-input slot="start" placeholder="{{records.getItem('fname')}}" [(ngModel)]="nameV" (focusin)="fnamein()" (focusout)="fnameout()"
+          [disabled]="!updateName" class="border rounded">
+        </ion-input>
+        <ion-label slot="start" style="font-size: smaller;" class="border rounded mx-1" (click)="edit('name')">Edit
+          <ion-icon name="create-outline" style="font-size: medium;"></ion-icon>
+        </ion-label>
+      </div>
+    </div>
+    <!--email-->
+    <br>
+    <div>
+      <ion-label class="">
+        Email
+      </ion-label>
+      <div class="d-flex justify-content-center align-items-center gx-1 text-center">
+        <ion-input slot="start" [placeholder]="records.getItem('email')" [(ngModel)]="emailV" (focusin)="emailin()"
+          (focusout)="emailout()" [disabled]="!updateEmail" class="border rounded">
+        </ion-input>
+        <ion-label slot="start" style="font-size: smaller;" class="border rounded mx-1" (click)="edit('email')">Edit
+          <ion-icon name="create-outline" style="font-size: medium;"></ion-icon>
+        </ion-label>
+      </div>
+    </div>
+    <br>
+    <!---password-->
+    <div>
+      <ion-label class="">
+        Password
+      </ion-label>
+      <div class="d-flex justify-content-center align-items-center gx-1 text-center">
+        <ion-input type="password" slot="start" placeholder="******" [(ngModel)]="passwordV" (focusin)="passwordin()"
+          (focusout)="passwordout()" [disabled]="!updatePassword" class="border rounded">
+        </ion-input>
+        <ion-label slot="start" style="font-size: smaller;" class="border rounded mx-1" (click)="edit('password')">Edit
+          <ion-icon name="create-outline" style="font-size: medium;"></ion-icon>
+        </ion-label>
+      </div>
+    </div>
+    <br>
+    <!--address-->
+    <div>
+      <ion-label class="">
+        Address
+      </ion-label>
+      <div class="d-flex justify-content-center align-items-center gx-1 text-center">
+        <ion-input slot="start" placeholder="{{records.getItem('address')}}" [(ngModel)]="addV"
+          [disabled]="!updateAddress" class="border rounded">
+        </ion-input>
+        <ion-label slot="start" style="font-size: smaller;" class="border rounded mx-1" (click)="edit('address')">Edit
+          <ion-icon name="create-outline" style="font-size: medium;"></ion-icon>
+        </ion-label>
+      </div>
+    </div>
+    <!--address-->
+  </div>
+  <div class="d-flex fixed-bottom border text-align-center row g-0" color="light">
+    <ion-button color="primary" class="col " (click)="save()" style="font-size: medium;">save</ion-button>
+    <ion-button color="danger" (click)="close()" class="col " style="font-size: medium;">cancel</ion-button>
+  </div>
+  <br>
+
+</ion-content>

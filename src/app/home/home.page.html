@@ -1,0 +1,78 @@
+<!--Menu-->
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar class="">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding" color="dark">
+    <div class="row text-bg-light p-2 gy-2 text-center display-5">
+      <div class="border border-secondary rounded p-1">
+        <ion-icon (click)="setSchedule()" name="calendar"></ion-icon>
+       <label for="" (click)="setSchedule()">Set Schedule</label>
+      </div>
+      <div class="border border-secondary rounded p-1">
+        <ion-icon name="locate-outline" slot="start"></ion-icon>
+        View location</div>
+      <div class="border fixed-bottom text-bg-light p-3">
+        <ion-icon name="log-out" slot="start" (click)="out()"></ion-icon>
+        Logout</div>
+    </div>
+  </ion-content>
+</ion-menu>
+<!--Main content-->
+<ion-header [translucent]="true" >
+  <ion-toolbar color="dark" >
+    <div class="d-flex justify-content-between px-2 gx-2" >
+      <div>
+        <img alt="logo" height="90" [src]="logo">
+      </div>
+      <div class="row row-1 align-items-center justify-content-center g-2">
+        <div class="col-4 text-center">
+          <ion-icon name="notifications" class="display-4 " color="primary"></ion-icon>
+        </div>
+        <div class="col-4 text-center">
+          <ion-icon (click)="editProfile()" name="person-circle" class="display-3"  color="success"></ion-icon>
+        </div>
+        <div class="col-4 text-center">
+          <ion-menu-toggle>
+            <ion-icon id="menu"  name="apps" class="display-3"  color="secondary"></ion-icon>
+          </ion-menu-toggle>
+              
+        </div>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" id="main-content" color="dark">
+  <ion-card color="dark">
+    <ion-card>
+      <ion-img src="./assets/bg.jpeg">
+      </ion-img>
+    </ion-card>
+    <ion-card style="padding: 10px; background-color: white;">
+      <div class="bg-success container rounded text-con">
+        <p class="text-center text-dark display-6 text">Trash smart, be clean,
+          Go Green!
+        </p>
+        <p class="text-center text-light second-paragraph">
+          Let us make our environment clean and Green TrashSmart Waste Monitoring System
+          allows cities and businesses to understand the complex dynamics of their waste
+          production. This system provides online access to prevent critical situitions and
+          introduce the dynamics collection to save time, cost, and fuel.
+        </p>
+        <p class="text-center text-light">
+          Let us all observe health and safety protocols <br>
+          <span class="text-center " style="color: #02e650;">
+            Stay at home and be safe!
+          </span><br>
+        </p>
+      </div>
+    </ion-card>
+    <div class="fixed-bottom text-end px-1">
+      <ion-icon name="chatbubble-ellipses" class="display-1" style="color: rgb(117, 223, 107)"> chat</ion-icon>
+    </div>
+  </ion-card>
+</ion-content>
+<!---->

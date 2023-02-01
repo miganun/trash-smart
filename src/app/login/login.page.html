@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <div class="d-flex justify-content-between px-2 ">
+      <div>
+        <img alt="logo" height="90" [src]="logo">
+      </div>
+      <div class="d-flex align-items-center" style="font-family:tahoma;" (click)="signup()">
+        Sign up
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" class="d-block">
+  <div class="{{alert}}">
+    {{alertTxt}}
+  </div>
+
+  <ion-card style="margin-top: 4rem; background-color: #35ad01;box-shadow: -3px 7px 10px black; border-radius: .9rem;"
+    class="px-3">
+    <form action="" method="post">
+      <div class="row d-block py-4 px-2 gy-4">
+        <div class="col bg-light px-2 py-1" style="font-size: large;border-radius: 1rem;">
+          <ion-input class="text-dark" [value]="username" (input)="getUsername($event)" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+            placeholder="Email" required="true"></ion-input>
+        </div>
+        <div class="col bg-light px-2 py-1" style="font-size: large;border-radius: 1rem;">
+          <ion-input class="text-dark" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+            [type]="pwd" placeholder="Password" [value]="password"  (input)="getPassword($event)" required="true" (keyup)="onFocus($event)"></ion-input>
+        </div>
+        <div class="text-center">
+          <button (click)="auth()" class="border border-dark px-4 py-2 text-dark "
+            style="border-radius: 5rem;width: fit-content;font-size: large;height: fit-content;background-color:  aqua;">
+            Log-In</button>
+        </div>
+      </div>
+    </form>
+  </ion-card>
+</ion-content>

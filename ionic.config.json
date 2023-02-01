@@ -1,0 +1,7 @@
+{
+  "name": "trash-smart",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
